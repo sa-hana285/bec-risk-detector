@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BEC Email Risk Detection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #020617;
+      padding: 30px;
+      width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+
+    textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .HIGH { background: #7f1d1d; }
+    .MEDIUM { background: #78350f; }
+    .LOW { background: #14532d; }
+
+    .label {
+      font-weight: bold;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #cbd5f5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>📧 BEC Email Risk Detection</h2>
+
+    <label>Email Content</label>
+    <textarea id="email" rows="6"
+      placeholder="Paste the email content here..."></textarea>
+
+    <label>Sender Role</label>
+    <select id="role">
+      <option>Engineer</option>
+      <option>Finance</option>
+      <option>HR</option>
+      <option>Manager</option>
+    </select>
+
+    <button onclick="analyze()">Analyze Email</button>
+
+    <div id="result" class="result">
+      <p><span class="label">Risk Level:</span> <span id="risk"></span></p>
+      <p class="small"><b>Reasons:</b></p>
+      <ul id="reasons"></ul>
+      <p class="small">
+        <b>Urgency:</b> <span id="urg"></span> |
+        <b>Financial:</b> <span id="fin"></span> |
+        <b>Role Mismatch:</b> <span id="rm"></span>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    async function analyze() {
+      const email = document.getElementById("email").value;
+      const role = document.getElementById("role").value;
+
+      const response = await fetch("http://127.0.0.1:8000/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email_body: email,
+          sender_role: role
+        })
+      });
+
+      const data = await response.json();
+
+      const resultBox = document.getElementById("result");
+      resultBox.style.display = "block";
+      resultBox.className = "result " + data.risk_level;
+
+      document.getElementById("risk").innerText = data.risk_level;
+      document.getElementById("urg").innerText = data.features.urgency_score;
+      document.getElementById("fin").innerText = data.features.financial_intent;
+      document.getElementById("rm").innerText = data.features.role_mismatch;
+
+      const reasonsList = document.getElementById("reasons");
+      reasonsList.innerHTML = "";
+      data.reasons.forEach(r => {
+        const li = document.createElement("li");
+        li.innerText = r;
+        reasonsList.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

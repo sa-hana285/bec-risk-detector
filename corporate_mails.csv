@@ -1,0 +1,51 @@
+email_id,sender_role,sender_email,receiver_role,subject,email_body,is_bec
+1,Finance,accounts@oriontech.com,Manager,Monthly Vendor Invoice Review,"Hi, Please find attached the vendor invoices for the month of June. Kindly review and approve them so that we can proceed with scheduled payments. Thanks, Finance Team",0
+2,HR,hr@oriontech.com,Engineer,Onboarding Documentation,"Hello, As discussed, please submit the signed onboarding documents by Friday. Let us know if you have any questions. Regards, HR Team",0
+3,Manager,manager@oriontech.com,Finance,Budget Approval,"Approved the Q2 budget. Please proceed with the planned allocations. Thanks.",0
+4,Engineer,dev1@oriontech.com,Engineer,Code Review Request,"Hey, Can you review the API changes I pushed yesterday? Let me know if anything needs fixing. Thanks!",0
+5,Finance,accounts@oriontech.com,Manager,Invoice Clarification,"Hi, We noticed a mismatch in the vendor invoice totals. Please advise on how to proceed. Regards, Finance Team",0
+6,HR,hr@oriontech.com,Manager,Interview Panel Confirmation,"Hello, Please confirm your availability for the interview panel scheduled on Thursday. Thanks, HR Team",0
+7,Engineer,dev2@oriontech.com,Manager,Deployment Update,"The new build has been deployed to staging. We will monitor performance before production release.",0
+8,Manager,manager@oriontech.com,Engineer,Weekly Status Update,"Please share the weekly progress update by EOD today.",0
+9,Finance,accounts@oriontech.com,HR,Payroll Confirmation,"Payroll has been processed successfully for this month. Let us know if there are any discrepancies.",0
+10,Engineer,dev3@oriontech.com,Engineer,Debugging Help,"I am facing an issue with the authentication module. Can you help me debug it later today?",0
+11,Manager,manager@oriontech.com,Finance,Vendor Contract Review,"Please review the vendor contract and share your feedback before final approval.",0
+12,HR,hr@oriontech.com,Engineer,Leave Policy Update,"We have updated the leave policy document. Please review it on the internal portal.",0
+13,Finance,accounts@oriontech.com,Manager,Quarterly Expense Report,"Attached is the quarterly expense report for your review.",0
+14,Engineer,dev4@oriontech.com,Engineer,Standup Notes,"Sharing the notes from today’s standup meeting.",0
+15,Manager,manager@oriontech.com,HR,Policy Acknowledgment,"Please ensure all team members acknowledge the updated HR policies.",0
+16,Finance,accounts@oriontech.com,Manager,Reimbursement Status,"Employee reimbursements for June have been processed.",0
+17,HR,hr@oriontech.com,Engineer,Training Session Reminder,"This is a reminder for the mandatory security training session tomorrow.",0
+18,Engineer,dev5@oriontech.com,Manager,Code Freeze Notice,"We are initiating code freeze from Friday for the upcoming release.",0
+19,Manager,manager@oriontech.com,Finance,Audit Preparation,"Please prepare the required financial documents for the upcoming audit.",0
+20,Finance,accounts@oriontech.com,Manager,Payment Schedule,"The payment schedule for vendors has been updated as discussed.",0
+21,Manager,manager@oriontech.com,Finance,Urgent Payment Required,"Hi, Please process a wire transfer of ₹4,85,000 today. This is confidential and needs to be handled immediately. Do not discuss this with others. I will explain later.",1
+22,HR,hr@oriontech.com,Finance,Immediate Bank Update,"Hello, We need to update employee bank details urgently. Please share the company banking credentials for verification. This is time-sensitive.",1
+23,Finance,accounts@oriontech.com,Manager,Confidential Transfer,"Hi, A payment needs to be made immediately to avoid service disruption. Please approve without delay. This is confidential.",1
+24,Manager,manager@oriontech.com,Finance,Payment,"Send the payment now. Do it fast.",1
+25,Engineer,dev2@oriontech.com,Finance,Invoice Clearance,"Hi, Can you clear the pending invoice immediately? It is urgent.",1
+26,Manager,manager@oriontech.com,Finance,Quick Request,"Need you to handle a transfer right away. This is sensitive.",1
+27,HR,hr@oriontech.com,Finance,Confidential Request,"Please process a special payment today. Do not inform others.",1
+28,Finance,accounts@oriontech.com,Manager,Immediate Action Needed,"Approval required now for an urgent transaction. Please respond quickly.",1
+29,Engineer,dev6@oriontech.com,Finance,Payment Help,"Can you help with making a quick payment today? It’s urgent.",1
+30,Manager,manager@oriontech.com,Finance,Private Matter,"Handle the transfer discreetly and confirm once done.",1
+31,Finance,accounts@oriontech.com,Manager,Vendor Payment Confirmation,"Hi, The vendor payment scheduled for this week has been processed successfully. Please let us know if you need the receipt. Regards, Finance Team",0
+32,HR,hr@oriontech.com,Manager,Employee Exit Formalities,"Hello, Please confirm the exit formalities for the employee resigning this month. Thanks, HR Team",0
+33,Engineer,dev7@oriontech.com,Engineer,Merge Request Review,"Can you please review my merge request when you get some time? Thanks!",0
+34,Manager,manager@oriontech.com,Finance,Expense Approval,"Approved the submitted expense claims. You may proceed with reimbursement.",0
+35,Finance,accounts@oriontech.com,HR,Salary Structure Update,"The revised salary structure has been updated in the payroll system.",0
+36,Engineer,dev8@oriontech.com,Manager,Production Issue Update,"We identified the root cause of the production issue and applied a fix. Monitoring now.",0
+37,HR,hr@oriontech.com,Engineer,Performance Review Cycle,"This is to inform you that the performance review cycle will start next week.",0
+38,Manager,manager@oriontech.com,Engineer,Client Meeting Notes,"Please document and share the key points discussed in today’s client meeting.",0
+39,Finance,accounts@oriontech.com,Manager,Audit Follow-up,"We have shared the requested documents with the audit team. Awaiting further inputs.",0
+40,Engineer,dev9@oriontech.com,Engineer,Testing Support,"Need your help to test the new feature before release.",0
+41,Manager,manager@oriontech.com,Finance,Immediate Approval Needed,"Please approve the transaction immediately. This is urgent and confidential.",1
+42,Finance,accounts@oriontech.com,Manager,Time-Sensitive Payment,"Hi, We must complete a payment today to avoid penalties. Kindly approve at once.",1
+43,HR,hr@oriontech.com,Finance,Confidential Payroll Request,"Please transfer a special payroll amount today. This must be handled discreetly.",1
+44,Engineer,dev10@oriontech.com,Finance,Payment Assistance,"Hi, Could you assist with making a payment immediately? It’s very urgent.",1
+45,Manager,manager@oriontech.com,Finance,Private Request,"This is a private matter. Please execute the transfer today and confirm.",1
+46,Finance,accounts@oriontech.com,Manager,Action Required Now,"Approval needed right now for a sensitive transaction. Please respond ASAP.",1
+47,HR,hr@oriontech.com,Finance,Urgent Compliance Matter,"We need to process a payment today for compliance reasons. Keep this confidential.",1
+48,Engineer,dev11@oriontech.com,Finance,Invoice Processing,"Can you process an invoice urgently today? It’s important.",1
+49,Manager,manager@oriontech.com,Finance,Quick Turnaround Needed,"Need this transfer completed quickly. Do not delay.",1
+50,Finance,accounts@oriontech.com,Manager,Discreet Payment,"Please ensure this payment is completed today. Handle it quietly.",1
