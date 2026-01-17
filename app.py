@@ -4,7 +4,6 @@ import joblib
 from fastapi.middleware.cors import CORSMiddleware
 
 
-# import preprocessing logic
 from preprocess import (
     compute_urgency_score,
     fin_intent,
@@ -19,25 +18,16 @@ app.add_middleware(
     allow_methods=["*"],  # allow POST, GET, OPTIONS
     allow_headers=["*"],
 )
-# -------------------------
-# Request schema
-# -------------------------
 class EmailRequest(BaseModel):
     email_body: str
     sender_role: str
 
-# -------------------------
-# Load trained model bundle
-# -------------------------
 model_bundle = joblib.load("bec_model.pkl")
 
 model = model_bundle["model"]
 fin_stems = model_bundle["fin_stems"]
 feature_cols = model_bundle["feature_cols"]
 
-# -------------------------
-# Health check
-# -------------------------
 @app.get("/")
 def home():
     return {
@@ -45,9 +35,6 @@ def home():
         "model_loaded": True
     }
 
-# -------------------------
-# Prediction endpoint
-# -------------------------
 @app.post("/predict")
 def predict_email_risk(request: EmailRequest):
 
@@ -61,12 +48,10 @@ def predict_email_risk(request: EmailRequest):
 
     X = [[urgency_score, financial_intent, role_mismatch]]
 
-    # ---- Isolation Forest prediction ----
     anomaly_pred = model.predict(X)[0]          # -1 or 1
     anomaly_flag = 1 if anomaly_pred == -1 else 0
     anomaly_score = float(model.decision_function(X)[0])
 
-    # ---- Risk logic (API version of assign_risk_level) ----
     reasons = []
 
     if role_mismatch == 1 and financial_intent > 0:
@@ -94,7 +79,6 @@ def predict_email_risk(request: EmailRequest):
                 "No suspicious behavioral patterns detected"
             )
 
-    # ---- Response ----
     return {
         "risk_level": risk_level,
         "anomaly_flag": anomaly_flag,
